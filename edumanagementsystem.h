@@ -16,15 +16,25 @@ public:
     explicit EDUManagementSystem(QWidget *parent = 0);
     ~EDUManagementSystem();
 
+
+signals:
+    void signalGetStuinfoFromStuinfow();
+
 public slots:
     void slotLoginSuccess(QString id);
 
+    void slotSendStuinfoToEduManguagement(QTableWidget *tbw);
+
 private slots:
-    void on_pushButton_clicked();
+    void on_pb_stumangement_clicked();
+    void on_pb_studataoutput_clicked();
+
 
 private:
     Ui::EDUManagementSystem *ui;
-    StudentInfosW *studentInfosW;
+    StudentInfosW *m_studentInfosW;
+
+    QTableWidget *m_stutbw;
 
 };
 

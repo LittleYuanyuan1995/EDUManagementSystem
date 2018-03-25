@@ -5,6 +5,7 @@
 #include <QDebug>
 
 #include "studentinfosw.h"
+#include "stufileoperation.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,10 +16,13 @@ int main(int argc, char *argv[])
     LoginW loginw;
     EDUManagementSystem Mainw;
 
-    StudentInfosW stuw;
-
     QObject::connect(&loginw, SIGNAL(signalLoginSuccess(QString)),
                      &Mainw, SLOT(slotLoginSuccess(QString)));
+
+//    Mainw.show();
     loginw.show();
+
+//    StuFileOperation st;
+//    st.newExcel("hello.xl");
     return a.exec();
 }
